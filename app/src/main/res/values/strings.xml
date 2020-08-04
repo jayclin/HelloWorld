@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HelloWorld</string>
+    <string name="inname">请输入姓名</string>
+    <string name="inbutton">登陆</string>
+    <string name="password" >请输入密码</string>
+    <string name="version">1.0.1beta</string>
+    <string name="icon_messge">图标</string>
+</resources>

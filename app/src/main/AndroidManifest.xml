@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.helloworld">
+<!--权限-->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,13 +13,53 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DispatchActivity">
+        <activity android:name=".provider.ContentProvider2Activity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:theme="@style/Theme.AppCompat.Dialog"
+            android:name=".SecondActivity">
+            <intent-filter>
+                <action android:name="com.jayclin.action.SecondActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ThirdActivity">
+            <intent-filter>
+                <action android:name="com.jayclin.action.ThirdActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".broadcastreceiver.BActivity">
+            <intent-filter>
+                <action android:name="com.jayclin.action.BActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:name=".service.MyService1">
+            <intent-filter>
+                <action android:name="com.jayclin.action.MyService1"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <receiver android:name=".broadcastreceiver.StaticBRReceiver">
+            <intent-filter>
+                <action android:name="com.jayclin.broadcastreceiver.StaticBRReceiver"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcastreceiver.DynamicBRReceiver">
+            <intent-filter>
+                <action android:name="com.jayclin.broadcastreceiver.DynamicBRReceiver"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <provider
+            android:authorities="com.example.helloworld.provider.NameContentProvider"
+            android:name="com.example.helloworld.provider.NameContentProvider"
+            android:exported="true"/>
     </application>
 
 </manifest>

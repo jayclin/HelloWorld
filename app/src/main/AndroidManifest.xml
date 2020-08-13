@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".provider.ContentProvider2Activity">
+        <activity android:name=".sqlite.SqliteActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -60,6 +60,7 @@
             android:authorities="com.example.helloworld.provider.NameContentProvider"
             android:name="com.example.helloworld.provider.NameContentProvider"
             android:exported="true"/>
+
     </application>
 
 </manifest>

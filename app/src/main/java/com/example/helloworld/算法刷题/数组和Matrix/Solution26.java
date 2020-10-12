@@ -27,6 +27,8 @@ package com.example.helloworld.算法刷题.数组和Matrix;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Solution26 {
+
+    //使用前后双指针，判断两个指针所指的值是否相等
     public int removeDuplicates(int[] nums){
         if (nums==null||nums.length==0)return 0;
         int p=0;
